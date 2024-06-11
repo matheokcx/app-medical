@@ -13,41 +13,50 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Le contrôleur PatientController gère les interactions avec la vue de gestion des patients de l'application.
+ */
 public class PatientController {
 
-    Stage stage;
-    Scene scene;
+    private Stage stage; // Référence à la scène principale de l'application
+    private Scene scene; // Référence à la scène de la vue de gestion des patients
 
     @FXML
-    private Label age;
+    private Label age; // Étiquette pour l'âge du patient
 
     @FXML
-    private TextField entrerAge;
+    private TextField entrerAge; // Champ de texte pour saisir l'âge du patient
 
     @FXML
-    private TextField entrerID;
+    private TextField entrerID; // Champ de texte pour saisir l'identifiant du patient
 
     @FXML
-    private TextField entrerNom;
+    private TextField entrerNom; // Champ de texte pour saisir le nom du patient
 
     @FXML
-    private TextField entrerPrenom;
+    private TextField entrerPrenom; // Champ de texte pour saisir le prénom du patient
 
     @FXML
-    private Label id;
+    private Label id; // Étiquette pour l'identifiant du patient
 
     @FXML
-    private Label nom;
+    private Label nom; // Étiquette pour le nom du patient
 
     @FXML
-    private Label prenom;
+    private Label prenom; // Étiquette pour le prénom du patient
 
     @FXML
-    private Button envoyer;
+    private Button envoyer; // Bouton pour envoyer la requête
 
     @FXML
-    private Button retour;
+    private Button retour; // Bouton pour revenir au menu principal
 
+    /**
+     * Méthode appelée lors du clic sur le bouton de retour au menu principal.
+     *
+     * @param event L'événement associé au clic sur le bouton de retour.
+     * @throws IOException Si une erreur survient lors du chargement de la vue principale.
+     */
     @FXML
     void RetourMenu(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
@@ -58,6 +67,11 @@ public class PatientController {
         stage.show();
     }
 
+    /**
+     * Méthode appelée lors du clic sur le bouton d'envoi de la requête.
+     *
+     * @param event L'événement associé au clic sur le bouton d'envoi de la requête.
+     */
     @FXML
     void envoyerRequete(ActionEvent event) {
         String nom = entrerNom.getText();
@@ -86,6 +100,15 @@ public class PatientController {
         }
     }
 
+    /**
+     * Méthode pour envoyer les données au serveur.
+     *
+     * @param id     L'identifiant du patient.
+     * @param nom    Le nom du patient.
+     * @param prenom Le prénom du patient.
+     * @param age    L'âge du patient.
+     * @return true si la requête est envoyée avec succès, false sinon.
+     */
     private boolean envoyerDonneesAuServeur(String id, String nom, String prenom, int age) {
         // Logique pour envoyer les données au serveur
         // Retourner vrai si la requête a réussi, faux sinon
@@ -93,6 +116,12 @@ public class PatientController {
         return true;
     }
 
+    /**
+     * Méthode pour afficher une boîte de dialogue d'alerte avec le titre et le message spécifiés.
+     *
+     * @param title   Le titre de la boîte de dialogue.
+     * @param message Le message à afficher dans la boîte de dialogue.
+     */
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -101,8 +130,12 @@ public class PatientController {
         alert.showAndWait();
     }
 
-
-    public void setStage(Stage val){
+    /**
+     * Méthode pour définir la scène principale de l'application.
+     *
+     * @param val La référence à la scène principale.
+     */
+    public void setStage(Stage val) {
         stage = val;
     }
 }
