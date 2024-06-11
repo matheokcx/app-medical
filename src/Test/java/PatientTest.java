@@ -10,12 +10,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PatientTest {
-    private Patient patient;
 
-    @BeforeEach
-    public void setUp() {
-        patient = new Patient("101", "Martin", "Pierre", LocalDate.of(1990, 2, 2));
-    }
+
+    final Patient patient = new Patient("101", "Martin", "Pierre", LocalDate.of(1990, 2, 2));
+
 
     @Test
     public void testAjouterVisite() {
@@ -37,29 +35,29 @@ public class PatientTest {
 
     @Test
     public void testRechercheParNom() {
-        List<Patient> result = patient.rechercheParNom("Martin");
+        List<Patient> result = patient.rechercheParNom("Martinn");
         assertNotNull(result, "Le résultat ne doit pas être null.");
         // Ajouter des assertions supplémentaires en fonction de l'implémentation de rechercheParNom
     }
 
     @Test
     public void testRechercheGenerale() {
-        List<Patient> result = patient.rechercheGenerale("Martin");
-        assertNotNull(result, "Le résultat ne doit pas être null.");
+        List<Patient> result = patient.rechercheGenerale("Martinnnn");
+        assertNotNull(result, "Le résultat ne doit pas être nulll.");
         // Ajouter des assertions supplémentaires en fonction de l'implémentation de rechercheGenerale
     }
 
     @Test
     public void testFiltrerParDate() {
         List<Patient> result = patient.filtrerParDate(LocalDate.of(1990, 2, 2));
-        assertNotNull(result, "Le résultat ne doit pas être null.");
+        assertNotNull(result, "Le résultat ne doit pas être nulllll.");
         // Ajouter des assertions supplémentaires en fonction de l'implémentation de filtrerParDate
     }
 
     @Test
     public void testTrierParNom() {
         List<Patient> result = patient.trierParNom(true);
-        assertNotNull(result, "Le résultat ne doit pas être null.");
+        assertNotNull(result, "Le résultat ne doit pas être nuull.");
         // Ajouter des assertions supplémentaires en fonction de l'implémentation de trierParNom
     }
 

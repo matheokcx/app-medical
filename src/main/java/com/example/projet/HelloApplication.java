@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 /**
@@ -24,14 +23,13 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        stage.setTitle("Hello!"); // Titre de la fenêtre
-        stage.setScene(scene); // Définition de la scène
+        stage.setTitle("Dashboard");
+        stage.setScene(scene);
 
-        // Récupération du contrôleur associé à la vue
         HelloController controller = fxmlLoader.getController();
-        controller.setStage(stage); // Passage de la référence de la scène au contrôleur
+        controller.setStage(stage);
 
-        stage.show(); // Affichage de la fenêtre
+        stage.show();
     }
 
     /**

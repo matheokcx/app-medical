@@ -1,5 +1,7 @@
 package com.example.projet;
 
+import com.example.projet.MedecinController;
+import com.example.projet.PatientController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +34,29 @@ public class HelloController {
     @FXML
     private Button gestionPatient; // Bouton pour accéder à la gestion des patients
 
+    @FXML
+    private Button gestionOrdo;
+
+    @FXML
+    private Button gestionRdv;
+
+    @FXML
+    void afficherOrdonnances(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vueOrdonnances.fxml"));
+        Parent viewContent = fxmlLoader.load();
+
+        OrdonnancesController ordoController = fxmlLoader.getController();
+        OrdonnancesController.setStage(stage);
+
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
+    }
+
+    @FXML
+    void afficherRdv(ActionEvent event) {
+
+    }
+
     /**
      * Méthode appelée lors du clic sur le bouton de gestion des patients.
      *
@@ -43,11 +68,22 @@ public class HelloController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vuePatient.fxml"));
         Parent viewContent = fxmlLoader.load();
 
-        // Récupération du contrôleur associé à la vue du patient
         PatientController patientController = fxmlLoader.getController();
-        patientController.setStage(stage); // Passage de la référence de la scène au contrôleur
+        patientController.setStage(stage);
 
         Scene scene = new Scene(viewContent);
-        stage.setScene(scene); // Changement de la scène pour afficher la vue du patient
+        stage.setScene(scene);
+    }
+
+    @FXML
+    void gestionMedecin(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vueMedecin.fxml"));
+        Parent viewContent = fxmlLoader.load();
+
+        MedecinController medecinController = fxmlLoader.getController();
+        medecinController.setStage(stage);
+
+        Scene scene = new Scene(viewContent);
+        stage.setScene(scene);
     }
 }

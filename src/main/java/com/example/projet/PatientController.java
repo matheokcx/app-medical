@@ -8,48 +8,26 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Le contrôleur PatientController gère les interactions avec la vue de gestion des patients de l'application.
  */
 public class PatientController {
 
+    private ArrayList<Patient> patients = new ArrayList<>();
+
     private Stage stage; // Référence à la scène principale de l'application
     private Scene scene; // Référence à la scène de la vue de gestion des patients
 
     @FXML
-    private Label age; // Étiquette pour l'âge du patient
+    private Button envoyer;
 
     @FXML
-    private TextField entrerAge; // Champ de texte pour saisir l'âge du patient
-
-    @FXML
-    private TextField entrerID; // Champ de texte pour saisir l'identifiant du patient
-
-    @FXML
-    private TextField entrerNom; // Champ de texte pour saisir le nom du patient
-
-    @FXML
-    private TextField entrerPrenom; // Champ de texte pour saisir le prénom du patient
-
-    @FXML
-    private Label id; // Étiquette pour l'identifiant du patient
-
-    @FXML
-    private Label nom; // Étiquette pour le nom du patient
-
-    @FXML
-    private Label prenom; // Étiquette pour le prénom du patient
-
-    @FXML
-    private Button envoyer; // Bouton pour envoyer la requête
-
-    @FXML
-    private Button retour; // Bouton pour revenir au menu principal
+    private Button retour;
 
     /**
      * Méthode appelée lors du clic sur le bouton de retour au menu principal.
@@ -74,10 +52,10 @@ public class PatientController {
      */
     @FXML
     void envoyerRequete(ActionEvent event) {
-        String nom = entrerNom.getText();
-        String prenom = entrerPrenom.getText();
-        String id = entrerID.getText();
-        String age = entrerAge.getText();
+        /*String nom = entrerNom.getText();
+        //String prenom = entrerPrenom.getText();
+        //String id = entrerID.getText();
+        //String age = entrerAge.getText();
 
         // Valider les informations (exemple simple)
         if (nom.isEmpty() || prenom.isEmpty() || id.isEmpty() || age.isEmpty()) {
@@ -97,7 +75,7 @@ public class PatientController {
             }
         } catch (NumberFormatException e) {
             showAlert("Erreur", "L'âge doit être un nombre.");
-        }
+        }*/
     }
 
     /**

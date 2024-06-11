@@ -13,16 +13,26 @@
   <children>
     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
       <children>
-        <Button fx:id="gestionPatient" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonPatient" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: ffffff; -fx-border-radius: 25;" text="Gestion Patient" textAlignment="CENTER" textFill="#282828">
+            <Button fx:id="gestionRdv" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#afficherRdv" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: ffffff;" text="Gestion Rendez-vous" textAlignment="CENTER" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
+        <Button fx:id="gestionPatient" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonPatient" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: ffffff; -fx-border-radius: 25;" text="Gestion Patient" textAlignment="CENTER" textFill="#282828">
           <font>
             <Font name="System Bold" size="11.0" />
           </font>
         </Button>
-        <Button fx:id="gestionMedecin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: ffffff; -fx-border-radius: 25;" text="Gestion Médecin" textAlignment="CENTER" textFill="#282828">
+        <Button fx:id="gestionMedecin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#gestionMedecin" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: ffffff; -fx-border-radius: 25;" text="Gestion Médecin" textAlignment="CENTER" textFill="#282828">
           <font>
             <Font name="System Bold" size="11.0" />
           </font>
         </Button>
+            <Button fx:id="gestionOrdo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#afficherOrdonnances" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: ffffff;" text="Gestion Ordonnances" textAlignment="CENTER" textFill="#252525">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Button>
       </children>
     </HBox>
   </children>
