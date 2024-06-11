@@ -1,5 +1,5 @@
 // src/main/java/com/example/projetmedical/Patient.java
-package _MedicalApp;
+package com.example.projet;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

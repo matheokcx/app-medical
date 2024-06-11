@@ -1,4 +1,4 @@
-package _MedicalApp;
+package com.example.projet;
 
 import java.util.ArrayList;
 import java.util.List;

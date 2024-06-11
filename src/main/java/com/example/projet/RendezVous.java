@@ -1,5 +1,4 @@
-package _MedicalApp;
-
+package com.example.projet;
 import java.time.LocalDateTime;
 
 public class RendezVous {
