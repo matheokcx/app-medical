@@ -1,0 +1,2 @@
+# Projet S.A.E 2.1 : Création d'une application Java de gestion pour un cabinet médical
+### /!\ La version finale de l'application se trouve sur la branche 'Lugi' à cause de nombreux problèmes survenu durant la journée !! /!\
